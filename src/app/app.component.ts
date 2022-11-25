@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sesion05';
+  title = 'cursoangular';
+
+  persona = { nombre: " ", edad: 0 };
+  personas = [
+    { nombre: 'Alexander', edad: 28 }
+  ];
+
+  agregar() {
+    this.personas.push(this.persona);
+    this.persona = { nombre: " ", edad: 0 }
+  }
 }

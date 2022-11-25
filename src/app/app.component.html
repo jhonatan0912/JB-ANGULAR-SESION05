@@ -1,1 +1,25 @@
-<app-form></app-form>
+<!-- <app-form></app-form> -->
+<h1>Curso de Angular</h1>
+<p>Bienvenido al curso de angular - <a href="https://aquiensistemas.com">aquiensistemas.com</a> </p>
+
+<label for="nombre">Nombre: </label><br>
+<input id="nombre" type="text" [(ngModel)]="persona.nombre">
+<br>
+<label for="edad">Edad: </label><br>
+<input id="edad" type="number" [(ngModel)]="persona.edad">
+<br>
+<button type="button" (click)="agregar()">Enviar</button>
+
+<table border="1">
+  <tr>
+    <th>Nombre</th>
+    <th>Edad</th>
+    <th>Tipo</th>
+  </tr>
+  <tr *ngFor="let p of personas">
+    <td>{{p.nombre}}</td>
+    <td>{{p.edad}}</td>
+    <td *ngIf="p.edad >=18">Mayor de edad</td>
+    <td *ngIf="p.edad <18">Menor de edad</td>
+  </tr>
+</table>
