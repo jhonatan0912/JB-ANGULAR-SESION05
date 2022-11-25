@@ -7,20 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  name: any=""
-  lastName: any=""
-  age: any=""
-  data: any = []
+  nameArr: any = []
+  lastNameArr: any = []
+  ageArr: any = []
+
   constructor() {
 
   }
 
   sendUser(name: HTMLInputElement, lastName: HTMLInputElement, age: HTMLInputElement) {
 
-    this.data.push(name.value);
-    this.data.push(lastName.value);
-    this.data.push(age.value);
-    console.log(this.data[2]);
+    this.nameArr.push(name.value);
+    this.lastNameArr.push(lastName.value);
+    this.ageArr.push(age.value);
 
   }
 

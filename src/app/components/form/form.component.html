@@ -29,7 +29,9 @@
     </thead>
     <tbody>
       <tr>
-        <td *ngFor="let user of data">{{user}}</td>
+        <td *ngFor="let name of nameArr">{{name}}</td>
+        <td *ngFor="let lastName of lastNameArr">{{lastName}}</td>
+        <td *ngFor="let age of ageArr">{{age}}</td>
       </tr>
     </tbody>
   </table>
