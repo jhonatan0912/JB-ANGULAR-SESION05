@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="d-flex flex-column text-center border mt-5">
+    <h1 class="text-center">Formulario</h1>
+    <label for="nombre">
+      <p>Nombre</p>
+      <input type="text" [(ngModel)]="persona.nombre">
+    </label>
+    <label for="apellido">
+      <p>Apellido</p>
+      <input type="text" [(ngModel)]="persona.apellido">
+    </label>
+    <label for="edad">
+      <p>Edad</p>
+      <input type="number" [(ngModel)]="persona.edad">
+    </label>
+    <button type="button" class="d-block m-auto bg-success text-white mt-4" (click)="agregar()">Enviar</button>
+  </div>
+
+  <table class="table table-dark mt-5">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of personas">
+        <td>{{person.nombre}}</td>
+        <td>{{person.apellido}}</td>
+        <td>{{person.edad}}</td>
+        <td *ngIf="person.edad>=18; else menor">Mayor de edad</td>
+        <ng-template #menor>
+          <td>Menor de edad</td>
+        </ng-template>
+      </tr>
+    </tbody>
+  </table>
+</div>
